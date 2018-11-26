@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.model;
+package in.ravikalla.security.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

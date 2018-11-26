@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample;
+package in.ravikalla.security;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

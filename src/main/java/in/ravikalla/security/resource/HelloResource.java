@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.resource;
+package in.ravikalla.security.resource;
 
 
 import java.util.Collection;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techprimers.security.securitydbexample.model.User;
+import in.ravikalla.security.model.User;
 
 @RequestMapping("/rest/hello")
 @RestController

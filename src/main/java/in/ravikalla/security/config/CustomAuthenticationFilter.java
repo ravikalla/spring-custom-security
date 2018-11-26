@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.config;
+package in.ravikalla.security.config;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -15,9 +15,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.techprimers.security.securitydbexample.model.Role;
-import com.techprimers.security.securitydbexample.model.User;
-import com.techprimers.security.securitydbexample.service.CustomAuthenticationToken;
+import in.ravikalla.security.model.Role;
+import in.ravikalla.security.model.User;
+import in.ravikalla.security.service.CustomAuthenticationToken;
 
 public class CustomAuthenticationFilter extends OncePerRequestFilter {
 

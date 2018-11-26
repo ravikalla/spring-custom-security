@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.config;
+package in.ravikalla.security.config;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

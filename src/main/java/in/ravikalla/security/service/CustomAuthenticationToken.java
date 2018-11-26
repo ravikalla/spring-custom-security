@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.service;
+package in.ravikalla.security.service;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.techprimers.security.securitydbexample.model.User;
+import in.ravikalla.security.model.User;
 
 public class CustomAuthenticationToken extends AbstractAuthenticationToken {
 

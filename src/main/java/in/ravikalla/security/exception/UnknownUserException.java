@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.exception;
+package in.ravikalla.security.exception;
 
 import org.springframework.security.core.AuthenticationException;
 

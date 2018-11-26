@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.config;
+package in.ravikalla.security.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
