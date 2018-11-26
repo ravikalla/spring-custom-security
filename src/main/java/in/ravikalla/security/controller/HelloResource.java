@@ -1,4 +1,4 @@
-package in.ravikalla.security.resource;
+package in.ravikalla.security.controller;
 
 
 import java.util.Collection;
@@ -54,7 +54,7 @@ public class HelloResource {
         if (null != user) {
         	Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
         	authorities.forEach(authority -> {
-            	System.out.println("53 : authority.getAuthority() = " + authority.getAuthority());
+            	logger.info("57 : HelloResource.alternate() : authority.getAuthority() = " + authority.getAuthority());
         	});
         	return "Alternate : " + user;
         }

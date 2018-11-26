@@ -1,4 +1,4 @@
-package in.ravikalla.security.service;
+package in.ravikalla.security.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

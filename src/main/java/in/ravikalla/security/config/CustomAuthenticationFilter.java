@@ -17,7 +17,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import in.ravikalla.security.model.Role;
 import in.ravikalla.security.model.User;
-import in.ravikalla.security.service.CustomAuthenticationToken;
 
 public class CustomAuthenticationFilter extends OncePerRequestFilter {
 

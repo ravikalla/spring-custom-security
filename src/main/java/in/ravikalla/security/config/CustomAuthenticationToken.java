@@ -1,4 +1,4 @@
-package in.ravikalla.security.service;
+package in.ravikalla.security.config;
 
 import java.util.Arrays;
 import java.util.Collection;
