@@ -33,7 +33,7 @@ public class HelloResource {
         	return "All";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/secured/all")
     public String securedHello() {
     	logger.info("22 : Start : HelloResource.securedHello()");
@@ -46,6 +46,7 @@ public class HelloResource {
         	return "Secured All";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN1')")
     @GetMapping("/secured/alternate")
     public String alternate() {
     	logger.info("28 : Start : HelloResource.alternate()");
