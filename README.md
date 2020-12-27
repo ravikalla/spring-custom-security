@@ -1,5 +1,5 @@
 ### Example1: Copy cookie content to header
- Check the unit test "[copyCookieContentToHTTPHeader()!](https://github.com/ravikalla/spring-custom-security/blob/master/src/test/java/in/ravikalla/security/SecurityApplicationTests.java#L43)" in "[SecurityApplicationTests.java](https://github.com/ravikalla/spring-custom-security/blob/master/src/test/java/in/ravikalla/security/SecurityApplicationTests.java)"
+ Check the unit test "[copyCookieContentToHTTPHeader()](https://github.com/ravikalla/spring-custom-security/blob/master/src/test/java/in/ravikalla/security/SecurityApplicationTests.java#L43)" in "[SecurityApplicationTests.java](https://github.com/ravikalla/spring-custom-security/blob/master/src/test/java/in/ravikalla/security/SecurityApplicationTests.java)"
 
  Steps to manually test from browser:
   1. Add cookie with Key="customHeader" and value="Value to be copied to header" (Browser -> Inspect -> Application -> Cookies -> Select domain and add cookie)
