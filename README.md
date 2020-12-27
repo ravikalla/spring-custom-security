@@ -14,6 +14,7 @@
  Steps to manually test from browser:
   1. Trigger URL : [http://localhost:8080/checkHeader/secured/all](http://localhost:8080/checkHeader/secured/all)
   2. View the response - <sub><sup>*"Secured All : User Object Content : true : 1 : test@test.com : test : test : 1 : :in.ravikalla.security.model.Role@221cf671"*</sup></sub>
+
  Notice the role required("ADMIN") to access "CheckHeader.securedHello()" method is there(added in "[CustomAuthenticationFilter.java#L36](https://github.com/ravikalla/spring-custom-security/blob/master/src/main/java/in/ravikalla/security/config/CustomAuthenticationFilter.java#L36)"), access is successful
 
 ### Example3: Custom Authentication And Authorization - Negative Test Case
