@@ -4,17 +4,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration {
 
 	private Logger logger = LoggerFactory.getLogger(SecurityConfiguration.class);
 
@@ -30,24 +32,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		this.demoAuthenticationProvider = demoAuthenticationProvider;
 	}
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    	auth.authenticationProvider(demoAuthenticationProvider);
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
     	logger.info("43 : Start : SecurityConfiguration.configure(...)");
 
-        http.csrf().disable();
-        http.authorizeRequests().antMatchers("**/secured/**").permitAll()
-        .anyRequest().authenticated()
-        .and()
-        .httpBasic()
-        .authenticationEntryPoint(customBasicAuthenticationEntryPoint);
+        http.csrf(csrf -> csrf.disable());
+        http.authorizeHttpRequests(authz -> authz
+            .requestMatchers("/checkHeader/**").permitAll()
+            .anyRequest().authenticated()
+        )
+        .httpBasic(basic -> basic
+            .authenticationEntryPoint(customBasicAuthenticationEntryPoint)
+        );
         http.addFilterBefore(new CustomAuthenticationFilter(), BasicAuthenticationFilter.class);
 
         logger.info("53 : End : SecurityConfiguration.configure(...)");
+        return http.build();
     }
 }

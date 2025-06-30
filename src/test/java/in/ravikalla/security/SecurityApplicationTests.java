@@ -4,16 +4,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import javax.servlet.http.Cookie;
+import jakarta.servlet.http.Cookie;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -23,10 +21,9 @@ import static in.ravikalla.security.util.Constants.CONTROLLER_CHECK_HEADER;
 import static in.ravikalla.security.util.Constants.CUSTOM_HEADER_NAME;
 import static in.ravikalla.security.util.Constants.METHOD_HEADER_LOOKUP;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class SecurityApplicationTests {
+class SecurityApplicationTests {
 	private Logger logger = LoggerFactory.getLogger(HttpHeaderModificationConfig.class);
 
 	@Autowired
@@ -40,7 +37,7 @@ public class SecurityApplicationTests {
 	 * Code for copying cookie content to header is in HttpHeaderModificationConfig.java
 	 */
 	@Test
-	public void copyCookieContentToHTTPHeader() throws Exception {
+	void copyCookieContentToHTTPHeader() throws Exception {
 		logger.info("35 : Start : SecurityApplicationTests.copyCookieContentToHTTPHeader()");
 
 		final String strCookieValue = "Ravi Test Cookie Value";
